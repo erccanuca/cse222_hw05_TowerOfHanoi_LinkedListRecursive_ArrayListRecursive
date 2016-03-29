@@ -45,10 +45,8 @@ public class LinkedListRecursiveTest {
         System.out.println("size");
         LinkedListRecursive instance = new LinkedListRecursive();
         int expResult = 0;
-        int result = instance.size();
+        int result = instance.size(); // should be zero
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -57,11 +55,13 @@ public class LinkedListRecursiveTest {
     @Test
     public void testAdd() {
         System.out.println("add");
-        Object newValue = null;
+        Object newValue = "11";
+        Object newValue2 = "11";
         LinkedListRecursive instance = new LinkedListRecursive();
+        LinkedListRecursive instance2 = new LinkedListRecursive();
         instance.add(newValue);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        instance2.add(newValue2);
+        assertEquals(instance.toString(), instance2.toString());
     }
 
     /**
@@ -70,13 +70,16 @@ public class LinkedListRecursiveTest {
     @Test
     public void testRemove() {
         System.out.println("remove");
-        Object outData = null;
+        Object outData = 12;
         LinkedListRecursive instance = new LinkedListRecursive();
-        boolean expResult = false;
+        instance.add(12);
+        instance.add(13);
+        instance.add(12);
+        LinkedListRecursive instance2 = new LinkedListRecursive();
+        instance2.add(13);
         boolean result = instance.remove(outData);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertTrue(result);
+        assertEquals(instance.toString(),instance2.toString());
     }
 
     /**
@@ -86,11 +89,10 @@ public class LinkedListRecursiveTest {
     public void testToString() {
         System.out.println("toString");
         LinkedListRecursive instance = new LinkedListRecursive();
-        String expResult = "";
+        instance.add("ali");
+        String expResult = "ali\n";
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
