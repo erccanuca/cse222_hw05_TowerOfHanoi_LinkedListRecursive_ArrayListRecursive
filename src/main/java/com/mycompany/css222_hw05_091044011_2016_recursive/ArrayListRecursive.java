@@ -11,7 +11,7 @@ import java.util.List;
 /**
  *
  * @author ercan
- * @param <E>
+ * @param <E> generic type
  */
 public class ArrayListRecursive<E>{
     /**

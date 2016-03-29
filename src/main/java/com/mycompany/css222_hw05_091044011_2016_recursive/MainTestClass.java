@@ -12,81 +12,30 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- *
  * @author ercan
  */
 public class MainTestClass {
 
     public static void main(String[] args) {
         
-        /*----------------------PART 1----------------*/
-        //Scanner input = new Scanner(System.in);
-       // System.out.print("Please input number of rings: ");
-      //  int numberOfDisk = input.nextInt();
-
-       /* int[][] pegs = new int[3][numberOfDisk];
+        /*-----------------------------------PART 1----------------------------*/
+        System.out.println("-----------------------PART_1-----------------------");
+        Scanner input = new Scanner(System.in);
+        System.out.print("Please input number of rings: ");
+        int numberOfDisk = input.nextInt();
+        int[][] pegs = new int[3][numberOfDisk];
         int[] pegA = new int[3];
-        int[] pegB = new int[3];*/
-       // towerOfHanoiIteratively(pegs, pegA, pegB, numberOfDisk);
+        int[] pegB = new int[3];
+        towerOfHanoiIteratively(pegs, pegA, pegB, numberOfDisk);
+        System.out.println("---------------------PART_1_END---------------------");
         
-       /*-----------------------PART 2-----------------*/
-        LinkedListRecursive link = new LinkedListRecursive<Integer>();
+       /*----------------------------------PART 2-------------------------------*/
+        test_part_2();
+        /*-------------------------------PART 3---------------------------------*/
+        test_part_3_Intersection();
+        test_part_3_Union();
+        test_part_3_Subset();
         
-        link.add(23);
-        link.add(34);
-        link.add(67);
-        link.add(50);
-        link.add(67);
-        link.add(67);
-        link.add(67);
-        link.add(67);
-        link.add(67);
-        link.add(67);
-        link.add(67);
-        link.add(67);
-        link.add(22);
-        link.add(67);
-        link.add(67);
-        link.add(11);
-        link.add(67);
-        link.add(67);
-        System.out.println("Before removing!");
-        
-        System.out.println(link.toString());
-         
-        if(link.remove(67)){
-            System.out.println("Remove all dublicates.");
-        }
-        System.out.println("After removing!\n\n");
-        System.out.println(link.toString());
-        
-        
-        /*---------------PART 3----------------------*/
-        ArrayList<Integer> list1 = new ArrayList<Integer>();
-        ArrayList<Integer> list2 = new ArrayList<Integer>();
-        list1.add(1);
-        list1.add(2);
-        list1.add(3);
-        list1.add(5);
-        list2.add(1);
-        list2.add(2);
-        list2.add(88);
-        list2.add(8);
-        list2.add(3);
-        list2.add(4);
-        list2.add(0);
-       
-        
-        Collections.sort(list1);
-        Collections.sort(list2);
-        
-        ArrayListRecursive<Integer> arraylist =  new ArrayListRecursive(list1, list2);
-        System.out.println(arraylist.toString());
-        //Collections.sort(arraylist.isSubSet());
-        System.out.println("\n\n"+arraylist.UnionOfLists());
-                
-        
-
     }
    /**
     * 
@@ -153,4 +102,320 @@ public class MainTestClass {
         System.out.printf("Number of moves: %d\n", numMoves);
     }
 
+    private static void test_part_2(){
+        System.out.println("-----------------------PART_2-----------------------");
+        System.out.println("-------------------PART_2_INTEGER-------------------");
+        LinkedListRecursive<Integer> link = new LinkedListRecursive<>();
+        link.add(23);
+        link.add(34);
+        link.add(67);
+        link.add(50);
+        link.add(67);
+        link.add(67);
+        link.add(67);
+        link.add(67);
+        link.add(67);
+        link.add(67);
+        link.add(67);
+        link.add(67);
+        link.add(22);
+        link.add(67);
+        link.add(67);
+        link.add(11);
+        link.add(67);
+        link.add(67);
+        
+        System.out.println("Before removing!");
+        System.out.println(link.toString());
+        
+        if(link.remove(67)){
+            System.out.println("Remove all dublicates.");
+        }
+        
+        System.out.println("After removing!\n\n");
+        System.out.println(link.toString());
+        System.out.println("-----------------PART_2_INTEGER_END-----------------");
+        System.out.println("-------------------PART_2_STRING-------------------");
+        LinkedListRecursive<String> link2 = new LinkedListRecursive<>();
+        link2.add("ercan");
+        link2.add("can");
+        link2.add("sercan");
+        link2.add("arif");
+        link2.add("elif");
+        link2.add("elif");
+        link2.add("serdar");
+        link2.add("elif");
+        link2.add("Ayse");
+        link2.add("elif");
+        link2.add("elif");
+        link2.add("Halis");
+        link2.add("Yusuf");
+        
+        
+        System.out.println("Before removing!");
+        System.out.println(link2.toString());
+        
+        if(link2.remove("elif")){
+            System.out.println("Remove all dublicates.");
+        }
+        
+        System.out.println("After removing!\n\n");
+        System.out.println(link2.toString());
+        System.out.println("-----------------PART_2_STRING_END-----------------");
+        System.out.println("-------------------PART_2_DOUBLE-------------------");
+        LinkedListRecursive<Double> link3 = new LinkedListRecursive<>();
+        link3.add(12.1);
+        link3.add(12.3);
+        link3.add(12.3);
+        link3.add(12.7);
+        link3.add(12.3);
+        link3.add(12.5);
+        link3.add(12.4);
+        
+        System.out.println("Before removing!");
+        System.out.println(link3.toString());
+        
+        if(link3.remove(12.3)){
+            System.out.println("Remove all dublicates.");
+        }
+        
+        System.out.println("After removing!\n\n");
+        System.out.println(link3.toString());
+        System.out.println("-----------------PART_2_DOUBLE_END-----------------");
+        System.out.println("---------------------PART_2_END---------------------");
+    }
+    
+    private static void test_part_3_Intersection(){
+        System.out.println("-----------------------PART_3-----------------------");
+        System.out.println("-----------------PART_3_Intersection----------------");
+        System.out.println("-------------PART_3_Intersection_Integer------------");
+        
+        ArrayList<Integer> list1 = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+        list1.add(5);
+        
+        list2.add(1);
+        list2.add(2);
+        list2.add(88);
+        list2.add(8);
+        list2.add(3);
+        list2.add(4);
+        list2.add(0);
+      
+        Collections.sort(list1);
+        Collections.sort(list2);
+        ArrayListRecursive<Integer> arraylist =  new ArrayListRecursive(list1, list2);
+        System.out.println(arraylist.toString());
+        Collections.sort(arraylist.IntersectionOfLists());
+        System.out.println("\n"+arraylist.IntersectionOfLists());
+        System.out.println("---------PART_3_Intersection_Integer_END------------\n");
+        
+        System.out.println("---------PART_3_Intersection_STRING-----------------");
+        ArrayList<String> list3 = new ArrayList<>();
+        ArrayList<String> list4 = new ArrayList<>();
+        list3.add("Ali");
+        list3.add("Can");
+        list3.add("ercan");
+        list3.add("elif");
+        
+        list4.add("Ali");
+        list4.add("Can");
+        list4.add("elif");
+        list4.add("sertap");
+        list4.add("ercan");
+        list4.add("kenan");
+        list4.add("ahmet");
+     
+        Collections.sort(list3);
+        Collections.sort(list4);
+        
+        ArrayListRecursive<String> arraylist2 =  new ArrayListRecursive(list3, list4);
+        System.out.println(arraylist2.toString());
+        Collections.sort(arraylist2.IntersectionOfLists());
+        System.out.println("\n"+arraylist2.IntersectionOfLists());     
+        System.out.println("---------PART_3_Intersection_String_END------------\n");
+        
+        System.out.println("---------PART_3_Intersection_DOUBLE-----------------");
+        ArrayList<Double> list5 = new ArrayList<>();
+        ArrayList<Double> list6 = new ArrayList<>();
+        list5.add(1.5);
+        list5.add(1.6);
+        list5.add(1.9);
+        list5.add(2.2);
+        
+        list6.add(1.5);
+        list6.add(1.6);
+        list6.add(99.99);
+        list6.add(33.4);
+        list6.add(1.9);
+        list6.add(4.223);
+        list6.add(0.1213);
+     
+        Collections.sort(list5);
+        Collections.sort(list6);
+        
+        ArrayListRecursive<Double> arraylist3 =  new ArrayListRecursive(list5, list6);
+        System.out.println(arraylist3.toString());
+        Collections.sort(arraylist3.IntersectionOfLists());
+        System.out.println("\n"+arraylist3.IntersectionOfLists());     
+        System.out.println("---------PART_3_Intersection_DOUBLE_END------------");
+        System.out.println("---------PART_3_Intersection_END------------------\n");
+
+    }
+    private static void test_part_3_Union(){
+        System.out.println("------------------PART_3_Union_List-----------------");
+        System.out.println("--------------PART_3_Union_List_Integer-------------");
+        
+        ArrayList<Integer> list1 = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+        list1.add(5);
+        
+        list2.add(1);
+        list2.add(2);
+        list2.add(88);
+        list2.add(8);
+        list2.add(3);
+        list2.add(4);
+        list2.add(0);
+      
+        Collections.sort(list1);
+        Collections.sort(list2);
+        ArrayListRecursive<Integer> arraylist =  new ArrayListRecursive(list1, list2);
+        System.out.println(arraylist.toString());
+        Collections.sort(arraylist.UnionOfLists());
+        System.out.println("\n"+arraylist.UnionOfLists());
+        System.out.println("---------PART_3_Union_List_Integer_END--------------\n");
+        
+        System.out.println("---------PART_3_Union_List_STRING-----------------");
+        ArrayList<String> list3 = new ArrayList<>();
+        ArrayList<String> list4 = new ArrayList<>();
+        list3.add("Ali");
+        list3.add("Can");
+        list3.add("ercan");
+        list3.add("elif");
+        
+        list4.add("Ali");
+        list4.add("Can");
+        list4.add("elif");
+        list4.add("sertap");
+        list4.add("ercan");
+        list4.add("kenan");
+        list4.add("ahmet");
+     
+        Collections.sort(list3);
+        Collections.sort(list4);
+        
+        ArrayListRecursive<String> arraylist2 =  new ArrayListRecursive(list3, list4);
+        System.out.println(arraylist2.toString());
+        Collections.sort(arraylist2.UnionOfLists());
+        System.out.println("\n"+arraylist2.UnionOfLists());     
+        System.out.println("---------PART_3_Union_List_String_END------------\n");
+        
+        System.out.println("---------PART_3_Union_List_DOUBLE-----------------");
+        ArrayList<Double> list5 = new ArrayList<>();
+        ArrayList<Double> list6 = new ArrayList<>();
+        list5.add(1.5);
+        list5.add(1.6);
+        list5.add(1.9);
+        list5.add(2.2);
+        
+        list6.add(1.5);
+        list6.add(1.6);
+        list6.add(99.99);
+        list6.add(33.4);
+        list6.add(1.9);
+        list6.add(4.223);
+        list6.add(0.1213);
+     
+        Collections.sort(list5);
+        Collections.sort(list6);
+        
+        ArrayListRecursive<Double> arraylist3 =  new ArrayListRecursive(list5, list6);
+        System.out.println(arraylist3.toString());
+        Collections.sort(arraylist3.UnionOfLists());
+        System.out.println("\n"+arraylist3.UnionOfLists());     
+        System.out.println("---------PART_3_Union_List_DOUBLE_END---------------");
+        System.out.println("---------PART_3_Union_List_END----------------------\n");
+    }
+    private static void test_part_3_Subset(){
+        System.out.println("-----------------PART_3_SubSet----------------------");
+        System.out.println("-------------PART_3_SubSet_Integer------------------");
+        
+        ArrayList<Integer> list1 = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+        list1.add(5);
+        
+        list2.add(1);
+        list2.add(2);
+        list2.add(88);
+        list2.add(8);
+        list2.add(3);
+        list2.add(4);
+        list2.add(0);
+      
+        Collections.sort(list1);
+        Collections.sort(list2);
+        ArrayListRecursive<Integer> arraylist =  new ArrayListRecursive(list1, list2);
+        System.out.println(arraylist.toString());
+        System.out.println("List2 is subset of list1: "+arraylist.isSubSet());
+        System.out.println("---------PART_3_SubSet_Integer_END------------------\n");
+        
+        System.out.println("---------PART_3_SubSet_STRING-----------------------");
+        ArrayList<String> list3 = new ArrayList<>();
+        ArrayList<String> list4 = new ArrayList<>();
+        list3.add("Ali");
+        list3.add("Can");
+        list3.add("ercan");
+        list3.add("elif");
+        
+        list4.add("Ali");
+        list4.add("Can");
+        list4.add("elif");
+        list4.add("sertap");
+        list4.add("ercan");
+        list4.add("kenan");
+        list4.add("ahmet");
+     
+        Collections.sort(list3);
+        Collections.sort(list4);
+        
+        ArrayListRecursive<String> arraylist2 =  new ArrayListRecursive(list3, list4);
+        System.out.println(arraylist2.toString());
+        System.out.println("List2 is subset of list1: "+arraylist2.isSubSet());     
+        System.out.println("---------PART_3_SubSet_String_END------------\n");
+        
+        System.out.println("---------PART_3_SubSet_DOUBLE-----------------");
+        ArrayList<Double> list5 = new ArrayList<>();
+        ArrayList<Double> list6 = new ArrayList<>();
+        list5.add(1.5);
+        list5.add(1.6);
+        list5.add(1.9);
+        list5.add(2.2);
+        
+        list6.add(1.5);
+        list6.add(1.6);
+        list6.add(99.99);
+        list6.add(33.4);
+        list6.add(1.9);
+        list6.add(4.223);
+        list6.add(0.1213);
+     
+        Collections.sort(list5);
+        Collections.sort(list6);
+        
+        ArrayListRecursive<Double> arraylist3 =  new ArrayListRecursive(list5, list6);
+        System.out.println("List2 is subset of list1: "+arraylist3.isSubSet());     
+        System.out.println("-------------PART_3_SubSet_DOUBLE_END---------------");
+        System.out.println("---------------PART_3_SubSet_END--------------------");
+        System.out.println("-----------------PART_3_END-------------------------\n");
+    }
 }
