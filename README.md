@@ -5,11 +5,13 @@ TowerOfHanoi iteratively ,LinkedListRecursive remove all dublicates,ArrayListRec
 
 Part 1: Implement the Towers of Hanoi problem iteratively.
 	Your prototype should be:
+	
 	public void TowerOfHanoi(disksize,src,dst,aux)
 
 Part 2: Implement the remove procedure from LinkListRec class but your
 	procedure removes all duplicate elements in linked list.
 	Your prototype should be:
+	
 	public boolean remove(Node < E > head, Node < E > pred, E outData)
 	
 Part 3: Implement a class that have two sorted array,list1 and list2.You
