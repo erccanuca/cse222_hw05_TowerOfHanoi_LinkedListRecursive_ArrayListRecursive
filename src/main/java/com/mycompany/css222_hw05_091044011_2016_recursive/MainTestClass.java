@@ -8,7 +8,6 @@ package com.mycompany.css222_hw05_091044011_2016_recursive;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Scanner;
 
 /**
  * @author ercan
@@ -22,9 +21,7 @@ public class MainTestClass {
         
         /*-----------------------------------PART 1----------------------------*/
         System.out.println("-----------------------PART_1-----------------------");
-        Scanner input = new Scanner(System.in);
-        System.out.print("Please input number of rings: ");
-        int numberOfDisk = input.nextInt();
+        int numberOfDisk = 3;
         int[][] pegs = new int[3][numberOfDisk];
         int[] pegA = new int[3];
         int[] pegB = new int[3];
@@ -50,6 +47,7 @@ public class MainTestClass {
 
         int numMoves = 0;
         int cyclemove = 0;
+        System.out.println("");
         for (int i = 0; i < numberOfDisk; i++) {
             pegs[0][i] = i + 1;
             pegs[1][i] = 99;
