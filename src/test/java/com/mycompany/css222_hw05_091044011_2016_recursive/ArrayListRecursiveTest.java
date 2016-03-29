@@ -5,6 +5,8 @@
  */
 package com.mycompany.css222_hw05_091044011_2016_recursive;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -44,12 +46,18 @@ public class ArrayListRecursiveTest {
     @Test
     public void testIntersectionOfLists() {
         System.out.println("IntersectionOfLists");
-        ArrayListRecursive instance = new ArrayListRecursive();
-        List expResult = null;
+        ArrayList<Integer> arr1 = new ArrayList<>();
+        arr1.add(12);
+        arr1.add(10);
+        arr1.add(23);
+        ArrayList<Integer> arr2 = new ArrayList<>();
+        arr2.add(23);
+        arr2.add(10);
+        Collections.sort(arr2);
+        ArrayListRecursive instance = new ArrayListRecursive(arr1, arr2);
         List result = instance.IntersectionOfLists();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Collections.sort(result);
+        assertEquals(arr2, result);
     }
 
     /**
@@ -58,12 +66,18 @@ public class ArrayListRecursiveTest {
     @Test
     public void testUnionOfLists() {
         System.out.println("UnionOfLists");
-        ArrayListRecursive instance = new ArrayListRecursive();
-        List expResult = null;
+        ArrayList<Integer> arr1 = new ArrayList<>();
+        arr1.add(12);
+        arr1.add(10);
+        arr1.add(23);
+        ArrayList<Integer> arr2 = new ArrayList<>();
+        arr2.add(23);
+        arr2.add(10);
+        Collections.sort(arr1);
+        ArrayListRecursive instance = new ArrayListRecursive(arr1, arr2);
         List result = instance.UnionOfLists();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        Collections.sort(result);
+        assertEquals(arr1, result);
     }
 
     /**
@@ -72,12 +86,18 @@ public class ArrayListRecursiveTest {
     @Test
     public void testIsSubSet() {
         System.out.println("isSubSet");
-        ArrayListRecursive instance = new ArrayListRecursive();
-        boolean expResult = false;
+        ArrayList<Integer> arr1 = new ArrayList<>();
+        arr1.add(12);
+        arr1.add(10);
+        arr1.add(23);
+        ArrayList<Integer> arr2 = new ArrayList<>();
+        arr2.add(10);
+        arr2.add(23);
+        Collections.sort(arr1);
+        ArrayListRecursive instance = new ArrayListRecursive(arr1, arr2);
+        boolean expResult = true;
         boolean result = instance.isSubSet();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -86,12 +106,14 @@ public class ArrayListRecursiveTest {
     @Test
     public void testToString() {
         System.out.println("toString");
-        ArrayListRecursive instance = new ArrayListRecursive();
-        String expResult = "";
+        ArrayList<Integer> arr1 = new ArrayList<>();
+        arr1.add(12);
+        ArrayList<Integer> arr2 = new ArrayList<>();
+        arr2.add(10);
+        ArrayListRecursive instance = new ArrayListRecursive(arr1, arr2);
+        String expResult = "ArrayListRecursive{list1=[12], list2=[10]}";
         String result = instance.toString();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

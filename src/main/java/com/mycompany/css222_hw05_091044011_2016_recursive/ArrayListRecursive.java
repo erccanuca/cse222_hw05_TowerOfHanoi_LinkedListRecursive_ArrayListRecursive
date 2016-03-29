@@ -68,23 +68,26 @@ public class ArrayListRecursive<E>{
        if(size1 == 0 || size2 == 0)
            return returnedList;
        if(size1==1 && size2 == 1){
-           if(list1.get(size1-1).equals(list2.get(size2-1))){
-               returnedList.add(list1.get(size2-1));
+           if(list1.get(0).equals(list2.get(0))){
+               returnedList.add(list1.get(0));
            }
            return returnedList;
        }
        else if(size1>=size2){
            if(list2.get(size2-1).equals(list1.get(size1-1))){
-               returnedList.add(list1.get(size2-1));
-               return IntersectionOfList(list1, list2, returnedList, size1-1, size2-1);
+               returnedList.add(list1.get(size1-1));
+               size1=list1.size();
+               return IntersectionOfList(list1, list2, returnedList, size1, size2-1);
            }else
                return IntersectionOfList(list1, list2, returnedList, size1-1, size2);
        }
        else{
+           
            if(list2.get(size2-1).equals(list1.get(size1-1))){
                returnedList.add(list2.get(size2-1));
                return  IntersectionOfList(list1, list2, returnedList, size1-1, size2-1);
            }else{
+                size1=list1.size();
                 return IntersectionOfList(list1, list2, returnedList, size1, size2-1);
            }
           
