@@ -5,9 +5,11 @@
  */
 package com.mycompany.css222_hw05_091044011_2016_recursive;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -56,18 +58,33 @@ public class MainTestClass {
         if(link.remove(67)){
             System.out.println("Remove all dublicates.");
         }
-        System.out.println("After removing!");
+        System.out.println("After removing!\n\n");
         System.out.println(link.toString());
         
         
         /*---------------PART 3----------------------*/
+        ArrayList<Integer> list1 = new ArrayList<Integer>();
+        ArrayList<Integer> list2 = new ArrayList<Integer>();
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+        list1.add(5);
+        list2.add(1);
+        list2.add(2);
+        list2.add(88);
+        list2.add(8);
+        list2.add(3);
+        list2.add(4);
+        list2.add(0);
+       
         
-        ArrayListRecursive arraylist =  new ArrayListRecursive<Integer>();
-        arraylist.add(122);
-        arraylist.add(55);
-        arraylist.add(33);
-        Collections.sort(arraylist);
+        Collections.sort(list1);
+        Collections.sort(list2);
+        
+        ArrayListRecursive<Integer> arraylist =  new ArrayListRecursive(list1, list2);
         System.out.println(arraylist.toString());
+        //Collections.sort(arraylist.isSubSet());
+        System.out.println("\n\n"+arraylist.UnionOfLists());
                 
         
 
