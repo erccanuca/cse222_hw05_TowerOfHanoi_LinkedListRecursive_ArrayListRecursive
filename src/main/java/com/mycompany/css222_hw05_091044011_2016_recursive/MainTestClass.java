@@ -8,14 +8,16 @@ package com.mycompany.css222_hw05_091044011_2016_recursive;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
 
 /**
  * @author ercan
  */
 public class MainTestClass {
-
+    /**
+    * Main test Method
+    * @param args Command line arguments 
+    */
     public static void main(String[] args) {
         
         /*-----------------------------------PART 1----------------------------*/
@@ -38,11 +40,11 @@ public class MainTestClass {
         
     }
    /**
-    * 
-    * @param pegs
-    * @param pegA
-    * @param pegB
-    * @param numberOfDisk 
+    * Tower of hanoi implement iterative.
+    * @param pegs store weight and disk number.
+    * @param pegA store swaps for pegA. 
+    * @param pegB store sawps for pegB.
+    * @param numberOfDisk total disks number.
     */
     public static void towerOfHanoiIteratively(int pegs[][], int pegA[], int pegB[], int numberOfDisk) {
 
@@ -101,7 +103,9 @@ public class MainTestClass {
         System.out.printf("Took approximately %d ms to solve Towers of Hanoi with %d disks\n", totalTime, numberOfDisk);
         System.out.printf("Number of moves: %d\n", numMoves);
     }
-
+    /**
+     * The Method for test part 2
+     */
     private static void test_part_2(){
         System.out.println("-----------------------PART_2-----------------------");
         System.out.println("-------------------PART_2_INTEGER-------------------");
@@ -184,7 +188,9 @@ public class MainTestClass {
         System.out.println("-----------------PART_2_DOUBLE_END-----------------");
         System.out.println("---------------------PART_2_END---------------------");
     }
-    
+    /**
+     * The method test for part 3, Intersection of lists
+     */
     private static void test_part_3_Intersection(){
         System.out.println("-----------------------PART_3-----------------------");
         System.out.println("-----------------PART_3_Intersection----------------");
@@ -265,6 +271,9 @@ public class MainTestClass {
         System.out.println("---------PART_3_Intersection_END------------------\n");
 
     }
+    /**
+     * The method test for part 3, Union of lists
+     */
     private static void test_part_3_Union(){
         System.out.println("------------------PART_3_Union_List-----------------");
         System.out.println("--------------PART_3_Union_List_Integer-------------");
@@ -343,6 +352,9 @@ public class MainTestClass {
         System.out.println("---------PART_3_Union_List_DOUBLE_END---------------");
         System.out.println("---------PART_3_Union_List_END----------------------\n");
     }
+    /**
+     * The method test for part 3, Subset of lists 
+     */
     private static void test_part_3_Subset(){
         System.out.println("-----------------PART_3_SubSet----------------------");
         System.out.println("-------------PART_3_SubSet_Integer------------------");
