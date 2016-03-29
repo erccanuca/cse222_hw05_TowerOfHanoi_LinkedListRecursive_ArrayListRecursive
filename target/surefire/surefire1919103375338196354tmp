@@ -1,0 +1,8 @@
+#surefire
+#Wed Mar 30 02:00:59 EEST 2016
+maven.ext.class.path=C\:\\Program Files\\NetBeans 8.0.2\\java\\maven-nblib\\netbeans-eventspy.jar
+user.dir=C\:\\Users\\ercan\\Documents\\NetBeansProjects\\css222_hw05_091044011_2016_Recursive
+file.encoding=UTF-8
+localRepository=C\:\\Users\\ercan\\.m2\\repository
+basedir=C\:\\Users\\ercan\\Documents\\NetBeansProjects\\css222_hw05_091044011_2016_Recursive
+test=com.mycompany.css222_hw05_091044011_2016_recursive.**.*Test
