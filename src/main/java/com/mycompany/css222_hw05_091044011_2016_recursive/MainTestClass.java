@@ -46,7 +46,7 @@ public class MainTestClass {
     * @param pegB store sawps for pegB.
     * @param numberOfDisk total disks number.
     */
-    public static void towerOfHanoiIteratively(int pegs[][], int pegA[], int pegB[], int numberOfDisk) {
+    private static void towerOfHanoiIteratively(int pegs[][], int pegA[], int pegB[], int numberOfDisk) {
 
         int numMoves = 0;
         int cyclemove = 0;
