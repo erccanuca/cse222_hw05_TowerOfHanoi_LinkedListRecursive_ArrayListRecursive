@@ -110,7 +110,7 @@ public class LinkedListRecursive<E> {
      * @param outData The data to be removed.
      * @return true if the all same item is removed, and false otherwise.
      */
-    public boolean remove(Node<E> head, Node<E> prev, E outData) {
+    private boolean remove(Node<E> head, Node<E> prev, E outData) {
         if (head == null) { // if list empty
             return false;
         } else if (head.data.equals(outData)) { // if found remove it.

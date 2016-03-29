@@ -14,22 +14,33 @@ import java.util.List;
  * @param <E>
  */
 public class ArrayListRecursive<E>{
-
+    /**
+     * list1 ArrayList type.
+     */
     private ArrayList<E> list1;
+    /**
+     * list2 ArrayList type.
+     */
     private ArrayList<E> list2;
-
+    
+    /**
+     * Default Constructor.
+     */
     public ArrayListRecursive() {
         list1 = new ArrayList<>();
         list2 = new ArrayList<>();    
     }
-    
-
+    /**
+     * Contructor with 2 parameter of ArrayLists.
+     * @param list1 The list1 of ArrayList.
+     * @param list2 The list2 of ArrayList.
+     */
     public ArrayListRecursive(ArrayList<E> list1, ArrayList<E> list2) {
         this.list1 = list1;
         this.list2 = list2;
     }
     /**
-     * Wrapper method
+     * Wrapper method that, find intersection of lists.
      * @return null if a list is empty, otherwise created list.
      */
     public List<E> IntersectionOfLists(){
@@ -82,7 +93,7 @@ public class ArrayListRecursive<E>{
     }
     
     /**
-     * Wrapper method
+     * Wrapper method that, find union of lists.
      * @return null if a list is empty, otherwise created list.
      */
     public List<E> UnionOfLists(){
@@ -125,7 +136,7 @@ public class ArrayListRecursive<E>{
     }  
     
     /**
-     * Wrapper method
+     * Wrapper method that, find is subset lists (true/false).
      * @return true if list2 is subset of list1, otherwise false. 
      */
     public boolean isSubSet(){
@@ -169,7 +180,10 @@ public class ArrayListRecursive<E>{
                 
         }   
     }
-
+    /**
+     * toString overrided method
+     * @return information of the class.
+     */
     @Override
     public String toString() {
         return "ArrayListRecursive{" +

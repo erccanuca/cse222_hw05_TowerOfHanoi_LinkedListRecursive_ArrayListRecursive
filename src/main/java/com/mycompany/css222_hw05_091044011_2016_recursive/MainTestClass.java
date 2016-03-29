@@ -7,7 +7,6 @@ package com.mycompany.css222_hw05_091044011_2016_recursive;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
@@ -89,7 +88,13 @@ public class MainTestClass {
         
 
     }
-
+   /**
+    * 
+    * @param pegs
+    * @param pegA
+    * @param pegB
+    * @param numberOfDisk 
+    */
     public static void towerOfHanoiIteratively(int pegs[][], int pegA[], int pegB[], int numberOfDisk) {
 
         int numMoves = 0;
