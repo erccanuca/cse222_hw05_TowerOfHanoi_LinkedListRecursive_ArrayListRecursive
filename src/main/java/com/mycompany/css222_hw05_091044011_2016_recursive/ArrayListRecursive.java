@@ -65,47 +65,59 @@ public class ArrayListRecursive<E>{
     private List<E> IntersectionOfList(List<E> list1,List<E> list2,
                                        List<E> returnedList,
                                        int size1, int size2){
-       if(size1 == 0 || size2 == 0)
-           return returnedList;
-       if(size1==1 && size2 == 1){
-           if(list1.get(0).equals(list2.get(0))){
-               returnedList.add(list1.get(0));
-           }
-           return returnedList;
-       }
-       else if(size1>=size2){
-           if(list2.get(size2-1).equals(list1.get(size1-1))){
-               returnedList.add(list1.get(size1-1));
-               size1=list1.size();
-               return IntersectionOfList(list1, list2, returnedList, size1, size2-1);
-           }else
-               return IntersectionOfList(list1, list2, returnedList, size1-1, size2);
-       }
-       else{
-           
-           if(list2.get(size2-1).equals(list1.get(size1-1))){
-               returnedList.add(list2.get(size2-1));
-               return  IntersectionOfList(list1, list2, returnedList, size1-1, size2-1);
-           }else{
-                size1=list1.size();
-                return IntersectionOfList(list1, list2, returnedList, size1, size2-1);
-           }
-          
-       }
-                  
-    }
-    
-    /**
-     * Wrapper method that, find union of lists.
-     * @return null if a list is empty, otherwise created list.
-     */
-    public List<E> UnionOfLists(){
-        if(list1.isEmpty() || list2.isEmpty())
-            return null;
-        else{
-            List<E> returnedList = new ArrayList<>();
-            return UnionOfLists(list1, list2,returnedList,list1.size(),list2.size());
-        }
+	   
+	   // Handling for ClassCast_intersectionList,add,get methods throws
+       try{ 
+			   if(size1 == 0 || size2 == 0)
+				   return returnedList;
+			   if(size1==1 && size2 == 1){
+				   if(list1.get(0).equals(list2.get(0))){
+					   returnedList.add(list1.get(0));
+				   }
+				   return returnedList;
+			   }
+			   else if(size1>=size2){
+				   if(list2.get(size2-1).equals(list1.get(size1-1))){
+					   returnedList.add(list1.get(size1-1));
+					   size1=list1.size();
+					   return IntersectionOfList(list1, list2, returnedList, size1, size2-1);
+				   }else
+					   return IntersectionOfList(list1, list2, returnedList, size1-1, size2);
+			   }
+			   else{
+				   
+				   if(list2.get(size2-1).equals(list1.get(size1-1))){
+					   returnedList.add(list2.get(size2-1));
+					   return  IntersectionOfList(list1, list2, returnedList, size1-1, size2-1);
+				   }else{
+						size1=list1.size();
+						return IntersectionOfList(list1, list2, returnedList, size1, size2-1);
+				   }
+				  
+			   }
+		   }catch(NullPointerException       |
+               ClassCastException            | 
+               IllegalStateException         | 
+               IllegalArgumentException      |
+				   IndexOutOfBoundsException exp)
+			{
+				exp.printStackTrace(System.err);
+				return null;
+			} 
+					  
+	}
+		
+	/**
+    * Wrapper method that, find union of lists.
+	* @return null if a list is empty, otherwise created list.
+	*/
+	public List<E> UnionOfLists(){
+		if(list1.isEmpty() || list2.isEmpty())
+			return null;
+		else{
+			List<E> returnedList = new ArrayList<>();
+			return UnionOfLists(list1, list2,returnedList,list1.size(),list2.size());
+		}	
     }
     
      /**
@@ -120,9 +132,11 @@ public class ArrayListRecursive<E>{
     private List<E> UnionOfLists(List<E> list1,List<E> list2,
                                  List<E> returnedList,
                                  int size1, int size2){
-        if(size1 == 0 || size2 == 0){
-            return returnedList;
-        }else{
+	   // Handling for ClassCast_UnionOfLists,add,get methods throws
+       try{ 
+			if(size1 == 0 || size2 == 0){
+				return returnedList;
+			}else{
             if(!list1.get(size1-1).equals(list2.get(size2-1)))
             {
                 if(!returnedList.contains(list1.get(size1-1)))
@@ -136,6 +150,15 @@ public class ArrayListRecursive<E>{
                 return UnionOfLists(list1, list2, returnedList, size1-1, size2-1);
             }
         }   
+       }catch(NullPointerException       |
+               ClassCastException            | 
+               IllegalStateException         | 
+               IllegalArgumentException      |
+			   IndexOutOfBoundsException exp)
+		{
+			exp.printStackTrace(System.err);
+			return null;
+		} 
     }  
     
     /**
@@ -160,19 +183,21 @@ public class ArrayListRecursive<E>{
      * @return true if list2 is subset of list1,otherwise false. 
      */
     private boolean isSubSet(List<E> list1,List<E> list2,
-                             int size1, int size2){
-       if(size1==1){
-           if(list1.get(0).equals(list2.get(size2-1)))
-               return true;
-           else
-               return isSubSet(list1, list2, size1, size2-1);
-       }
-       else if(size2==1){
-            if(list1.get(size1-1).equals(list2.get(0)))
-               return true;
-           else
-               return isSubSet(list1, list2, size1-1, size2);
-       }else{
+								 int size1, int size2){
+	// Handling for ClassCast_isSubSet,add,get methods throws
+    try{
+		   if(size1==1){
+			   if(list1.get(0).equals(list2.get(size2-1)))
+				   return true;
+			   else
+				   return isSubSet(list1, list2, size1, size2-1);
+		   }
+		   else if(size2==1){
+				if(list1.get(size1-1).equals(list2.get(0)))
+				   return true;
+			   else
+				   return isSubSet(list1, list2, size1-1, size2);
+		   }else{
             if(size1>size2 && !list1.get(size1-1).equals(list2.get(size2-1)))
                return isSubSet(list1, list2, size1, size2-1);
             else if(size1<size2 && !list2.get(size2-1).equals(list1.get(size1-1)))
@@ -182,6 +207,15 @@ public class ArrayListRecursive<E>{
             }
                 
         }   
+	   }catch(NullPointerException           |
+               ClassCastException            | 
+               IllegalStateException         | 
+               IllegalArgumentException      |
+			   IndexOutOfBoundsException exp)
+		{
+			exp.printStackTrace(System.err);
+			return false;
+		} 
     }
     /**
      * toString overrided method
